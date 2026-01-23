@@ -1,0 +1,344 @@
+.header {
+  background-color: #0a0a0a;
+  border-bottom: 1px solid #1f1f1f;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 1rem 0;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo Styles */
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  gap: 0.75rem;
+}
+
+.logoIcon {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid #333333;
+}
+
+.logoCircle {
+  width: 16px;
+  height: 16px;
+  background: linear-gradient(45deg, #0066ff, #7b42f6);
+  border-radius: 50%;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+
+.logoWave {
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(45deg, #00ff88, #00cc66);
+  border-radius: 3px;
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 70%);
+}
+
+.logoText {
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #ffffff, #e6e6e6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.5px;
+}
+
+/* Navigation Styles */
+.navList {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 0.5rem;
+  background: rgba(26, 26, 26, 0.8);
+  border-radius: 15px;
+  border: 1px solid #333333;
+  margin: 0;
+}
+
+.navItem {
+  position: relative;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: 10px;
+  background: rgba(38, 38, 38, 0.7);
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.navLink:hover {
+  background: rgba(51, 51, 51, 0.9);
+  border-color: #444444;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 102, 255, 0.15);
+}
+
+.navIcon {
+  font-size: 1rem;
+  filter: brightness(1.2);
+}
+
+.navText {
+  color: #f0f0f0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Login Button */
+.loginButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #1a5cff, #7b42f6);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.8rem;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(0, 102, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.loginButton:hover {
+  background: linear-gradient(135deg, #2a6cff, #8b52ff);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 102, 255, 0.35);
+}
+
+.buttonIcon {
+  font-size: 1rem;
+}
+
+.buttonText {
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Mobile Menu Button */
+.menuButton {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 32px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+}
+
+.menuBar {
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #e6e6e6, #cccccc);
+  border-radius: 3px;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  transform-origin: left;
+}
+
+/* Menu Button Animation (Hamburger to X) */
+.menuButton.open .menuBar:nth-child(1) {
+  transform: rotate(45deg);
+}
+
+.menuButton.open .menuBar:nth-child(2) {
+  opacity: 0;
+}
+
+.menuButton.open .menuBar:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+.menuButton:hover .menuBar {
+  background: linear-gradient(90deg, #0066ff, #7b42f6);
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  .navList {
+    gap: 1rem;
+  }
+
+  .navLink {
+    padding: 0.65rem 1rem;
+  }
+
+  .loginButton {
+    padding: 0.7rem 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Hide nav by default on mobile */
+  .nav {
+    display: none;
+    width: 100%;
+  }
+
+  /* Show nav when active */
+  .nav.navActive {
+    display: flex;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #0a0a0a;
+    border-bottom: 1px solid #1f1f1f;
+    padding: 1.5rem;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.9);
+    flex-direction: column;
+    animation: slideDown 0.3s ease forwards;
+  }
+
+  /* Stack items vertically and Center them */
+  .navActive .navList {
+    flex-direction: column;
+    align-items: center; /* Center items horizontally in the column */
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 0;
+    gap: 1rem;
+  }
+
+  .navActive .navItem {
+    width: 100%;
+    display: flex;         /* Ensure the LI is a flex container */
+    justify-content: center; /* Center the content inside the LI */
+  }
+
+  .navActive .navLink {
+    width: 100%;
+    justify-content: center; /* Center text/icon inside the link */
+  }
+
+  .navActive .loginButton {
+    width: 100%;
+    justify-content: center; /* Center content inside button */
+  }
+
+  /* Show the hamburger button */
+  .menuButton {
+    display: flex;
+  }
+
+  .container {
+    padding: 0 1.25rem;
+  }
+
+  .logoText {
+    font-size: 1.3rem;
+  }
+
+  .logoIcon {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+@media (max-width: 425.6px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .logoText {
+    font-size: 1.2rem;
+  }
+
+  .logoIcon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .menuButton {
+    width: 28px;
+    height: 20px;
+  }
+
+  .menuBar {
+    height: 2.5px;
+  }
+}
+
+@media (max-width: 375.2px) {
+  .container {
+    padding: 0 0.75rem;
+  }
+
+  .logoText {
+    font-size: 1.1rem;
+  }
+
+  .logo {
+    gap: 0.5rem;
+  }
+
+  .logoIcon {
+    width: 26px;
+    height: 26px;
+  }
+
+  .menuButton {
+    width: 26px;
+    height: 18px;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

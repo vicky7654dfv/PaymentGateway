@@ -1,0 +1,830 @@
+.footerWrap {
+  background: #000000;
+  border-top: 2px solid #222222;
+  padding: 60px 0 30px;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.footerContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Scroll to Top Button */
+.scrollTopButton {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: #ffffff;
+  color: #000000;
+  border: 2px solid #cccccc;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  z-index: 1000;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+}
+
+.scrollTopButton.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.scrollTopButton:hover {
+  background: #f0f0f0;
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+}
+
+.scrollTopIcon {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+/* Main Footer Content */
+.footerMain {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr 1.5fr;
+  gap: 40px;
+  margin-bottom: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #333333;
+}
+
+/* Brand Column */
+.brandColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.logoContainer {
+  margin-bottom: 10px;
+}
+
+.footerLogo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-decoration: none;
+}
+
+.logoIcon {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  background: #111111;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 2px solid #333333;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+.logoCircle {
+  width: 20px;
+  height: 20px;
+  background: #ffffff;
+  border-radius: 50%;
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.logoWave {
+  width: 24px;
+  height: 24px;
+  background: #ffffff;
+  border-radius: 4px;
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 70%);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.logoTitle {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+  text-shadow: 0 2px 10px rgba(255, 255, 255, 0.3);
+}
+
+.brandDescription {
+  color: #999999;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.aboutButton {
+  background: #ffffff;
+  color: #000000;
+  border: 2px solid #cccccc;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+.aboutButton:hover {
+  background: #f0f0f0;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(255, 255, 255, 0.2);
+}
+
+.arrowIcon {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+/* Social Media */
+.socialMedia {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.socialTitle {
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.socialIcon {
+  width: 42px;
+  height: 42px;
+  background: #ffffff;
+  border: 2px solid #cccccc;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.socialIcon:hover {
+  background: #f0f0f0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+.iconEmoji {
+  font-size: 1.2rem;
+  filter: brightness(0);
+}
+
+/* Common Column Styles */
+.linksColumn,
+.contactColumn,
+.appColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.columnTitle {
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0 0 15px 0;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.columnTitle::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: #ffffff;
+  border-radius: 2px;
+}
+
+/* Links List */
+.linksList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.linkItem {
+  margin: 0;
+}
+
+.footerLink {
+  background: none;
+  border: none;
+  color: #999999;
+  font-size: 0.95rem;
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.footerLink:hover {
+  color: #ffffff;
+  transform: translateX(5px);
+}
+
+.footerLink::before {
+  content: '→';
+  position: absolute;
+  left: -15px;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.footerLink:hover::before {
+  opacity: 1;
+  left: -10px;
+}
+
+/* Contact Info */
+.contactList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contactItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.contactIcon {
+  color: #ffffff;
+  font-size: 1rem;
+  width: 20px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.contactText {
+  color: #999999;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Trust Badges */
+.trustSection {
+  margin-top: 20px;
+}
+
+.trustTitle {
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 15px 0;
+}
+
+.trustBadges {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.trustBadge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  border: 1px solid #333333;
+}
+
+.badgeIcon {
+  font-size: 1.2rem;
+  color: #ffffff;
+}
+
+.badgeContent {
+  flex: 1;
+}
+
+.badgeTitle {
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.badgeText {
+  color: #999999;
+  font-size: 0.75rem;
+  line-height: 1.2;
+}
+
+/* App Downloads */
+.appDownloads {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.appButton {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px;
+  background: #ffffff;
+  border: 2px solid #cccccc;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  text-align: left;
+}
+
+.appButton:hover {
+  background: #f0f0f0;
+  border-color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.appIcon {
+  font-size: 1.5rem;
+  filter: brightness(0);
+}
+
+.appContent {
+  flex: 1;
+}
+
+.appSubtitle {
+  color: #666666;
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.appName {
+  color: #000000;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+/* Newsletter */
+.newsletterSection {
+  margin-top: 25px;
+}
+
+.newsletterTitle {
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+}
+
+.newsletterText {
+  color: #999999;
+  font-size: 0.85rem;
+  margin: 0 0 15px 0;
+  line-height: 1.4;
+}
+
+.newsletterForm {
+  display: flex;
+  gap: 8px;
+}
+
+.newsletterInput {
+  flex: 1;
+  padding: 10px 12px;
+  background: #1a1a1a;
+  border: 2px solid #333333;
+  border-radius: 6px;
+  color: #ffffff;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.newsletterInput:focus {
+  outline: none;
+  border-color: #ffffff;
+  background: #222222;
+}
+
+.newsletterButton {
+  padding: 10px 20px;
+  background: #ffffff;
+  color: #000000;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.newsletterButton:hover {
+  background: #f0f0f0;
+  transform: translateY(-2px);
+}
+
+/* Payment Icons */
+.paymentIcons {
+  margin-top: 25px;
+}
+
+.paymentTitle {
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+}
+
+.paymentMethodsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.paymentIcon {
+  font-size: 1.5rem;
+  color: #ffffff;
+  text-align: center;
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));
+}
+
+/* Footer Bottom */
+.footerBottom {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.divider {
+  border: none;
+  height: 1px;
+  background: #333333;
+  margin: 0;
+}
+
+.bottomContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Copyright */
+.copyrightSection {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.copyrightIcon {
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+.copyrightText {
+  color: #999999;
+  font-size: 0.85rem;
+}
+
+/* Legal Links */
+.legalLinks {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.legalLink {
+  background: none;
+  border: none;
+  color: #999999;
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.legalLink:hover {
+  color: #ffffff;
+}
+
+.legalLink::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #ffffff;
+  transition: width 0.3s ease;
+}
+
+.legalLink:hover::after {
+  width: 100%;
+}
+
+/* Security Info */
+.securityInfo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #333333;
+}
+
+.securityIcon {
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+.securityText {
+  color: #999999;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+  .footerMain {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 35px;
+  }
+
+  .brandColumn {
+    grid-column: 1 / -1;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .footerLogo {
+    justify-content: center;
+  }
+
+  .aboutButton {
+    align-self: center;
+  }
+
+  .socialIcons {
+    justify-content: center;
+  }
+
+  /* Equal spacing for other columns */
+  .linksColumn:nth-child(2),
+  .linksColumn:nth-child(3),
+  .contactColumn,
+  .appColumn {
+    grid-column: span 1;
+  }
+
+  .footerContainer {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .footerWrap {
+    padding: 50px 0 25px;
+  }
+
+  .footerMain {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+
+  .brandColumn {
+    grid-column: 1 / -1;
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .footerLogo {
+    justify-content: flex-start;
+  }
+
+  .aboutButton {
+    align-self: flex-start;
+  }
+
+  .socialIcons {
+    justify-content: flex-start;
+  }
+
+  .contactColumn,
+  .appColumn {
+    grid-column: 1 / -1;
+  }
+
+  .contactColumn {
+    order: 4;
+  }
+
+  .appColumn {
+    order: 5;
+  }
+
+  .trustBadges {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .bottomContent {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 425.6px) {
+  .footerWrap {
+    padding: 40px 0 20px;
+  }
+
+  .footerContainer {
+    padding: 0 1rem;
+  }
+
+  .footerMain {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .brandColumn {
+    grid-column: 1;
+    text-align: center;
+    align-items: center;
+  }
+
+  .footerLogo {
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .aboutButton {
+    align-self: center;
+  }
+
+  .socialIcons {
+    justify-content: center;
+  }
+
+  .columnTitle {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+  }
+
+  .footerLink {
+    font-size: 0.9rem;
+  }
+
+  .contactText {
+    font-size: 0.85rem;
+  }
+
+  .trustBadges {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .appButton {
+    padding: 10px;
+  }
+
+  .newsletterForm {
+    flex-direction: column;
+  }
+
+  .newsletterButton {
+    width: 100%;
+  }
+
+  .paymentMethodsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .scrollTopButton {
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media (max-width: 375.2px) {
+  .footerWrap {
+    padding: 35px 0 15px;
+  }
+
+  .footerContainer {
+    padding: 0 0.75rem;
+  }
+
+  .logoIcon {
+    width: 45px;
+    height: 45px;
+  }
+
+  .logoTitle {
+    font-size: 1.5rem;
+  }
+
+  .brandDescription {
+    font-size: 0.9rem;
+  }
+
+  .aboutButton {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  .socialIcon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .iconEmoji {
+    font-size: 1.1rem;
+  }
+
+  .trustBadge {
+    padding: 8px;
+  }
+
+  .appSubtitle {
+    font-size: 0.75rem;
+  }
+
+  .appName {
+    font-size: 0.85rem;
+  }
+
+  .copyrightText {
+    font-size: 0.8rem;
+  }
+
+  .legalLink {
+    font-size: 0.8rem;
+  }
+
+  .securityText {
+    font-size: 0.75rem;
+  }
+
+  .scrollTopButton {
+    bottom: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .scrollTopIcon {
+    font-size: 1.2rem;
+  }
+}

@@ -1,0 +1,520 @@
+.paymentGateway {
+  background-color: #000000;
+  min-height: 100vh;
+  padding: 4rem 1rem;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #fff, #aaa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: #888;
+  font-size: 1rem;
+}
+
+/* Layout Grid */
+.layout {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* --- Left Panel: Controls --- */
+.controlsPanel {
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* 1. Amount Section */
+.amountSection {
+  padding: 2rem;
+  border-bottom: 1px solid #222;
+  background: linear-gradient(180deg, #161616, #111);
+}
+
+.amountLabel {
+  display: block;
+  color: #888;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.required {
+  color: #ff4d4d;
+  margin-left: 4px;
+  font-weight: bold;
+}
+
+.amountWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.currencySymbol {
+  font-size: 2rem;
+  color: #fff;
+  font-weight: 300;
+}
+
+.amountInput {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 3rem;
+  font-weight: 700;
+  width: 100%;
+  outline: none;
+}
+
+.amountInput::placeholder {
+  color: #333;
+}
+
+/* 2. Tabs */
+.tabsContainer {
+  display: flex;
+  background: #0a0a0a;
+  padding: 0.5rem;
+  gap: 0.5rem;
+  border-bottom: 1px solid #222;
+}
+
+.tab {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #666;
+  padding: 1rem;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.tab:hover {
+  background: #1a1a1a;
+  color: #fff;
+}
+
+.activeTab {
+  background: #222 !important;
+  color: #fff !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.tabIcon {
+  font-size: 1.2rem;
+}
+
+/* 3. Content Area */
+.contentArea {
+  padding: 2rem;
+  min-height: 350px;
+  position: relative;
+}
+
+.errorMessage {
+  background: rgba(255, 77, 77, 0.1);
+  color: #ff4d4d;
+  padding: 0.8rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  text-align: center;
+  border: 1px solid rgba(255, 77, 77, 0.2);
+}
+
+/* --- QR Tab Styles --- */
+.qrContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.qrFrame {
+  width: 220px;
+  height: 220px;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 15px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qrCode {
+  width: 100%;
+  height: 100%;
+  background: #000;
+  position: relative;
+  overflow: hidden;
+}
+
+.qrPattern {
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(#fff 30%, transparent 31%), radial-gradient(#fff 30%, transparent 31%);
+  background-size: 10px 10px;
+  background-position: 0 0, 5px 5px;
+  opacity: 0.8;
+}
+
+.qrBlur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  font-weight: 600;
+  text-align: center;
+  padding: 1rem;
+}
+
+.qrOverlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.qrOverlayText {
+  color: #000;
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+.tabInstruction {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+/* --- UPI / OTP Tab Styles --- */
+.upiForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.otpForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.otpHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+.editPhone {
+  background: none;
+  border: none;
+  color: #4a90e2;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.otpInputs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.otpInput {
+  width: 45px;
+  height: 55px;
+  border-radius: 8px;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  color: #fff;
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+.otpInput:focus {
+  border-color: #fff;
+  outline: none;
+}
+
+.timerWrapper {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* --- Card Tab Styles --- */
+.cardForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.formRow {
+  display: flex;
+  gap: 1rem;
+}
+
+.formGroup {
+  width: 100%;
+  text-align: left;
+}
+
+.formLabel {
+  display: block;
+  color: #888;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.inputIconWrapper {
+  position: relative;
+}
+
+.inputIcon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #666;
+}
+
+.formInput {
+  width: 100%;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  padding: 1rem;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 1rem;
+  transition: border 0.3s;
+}
+
+.inputIconWrapper .formInput {
+  padding-left: 3rem;
+}
+
+.formInput:focus {
+  border-color: #555;
+  outline: none;
+  background: #222;
+}
+
+/* Buttons */
+.primaryAction {
+  width: 100%;
+  background: #fff;
+  color: #000;
+  padding: 1rem;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.primaryAction:hover:not(:disabled) {
+  background: #f0f0f0;
+  transform: translateY(-2px);
+}
+
+.primaryAction:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* --- Right Panel: Summary --- */
+.summaryPanel {
+  position: sticky;
+  top: 2rem;
+}
+
+.summaryCard {
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 20px;
+  padding: 2rem;
+}
+
+.summaryTitle {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  color: #888;
+  font-size: 0.95rem;
+}
+
+.freeText {
+  color: #4cd964;
+}
+
+.divider {
+  height: 1px;
+  background: #222;
+  margin: 1.5rem 0;
+}
+
+.totalRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 2rem;
+}
+
+.securityBadge {
+  background: rgba(255,255,255,0.05);
+  border-radius: 10px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.lockIcon {
+  font-size: 1.5rem;
+}
+
+.secTitle {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #fff;
+}
+
+.secDesc {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* --- Modal --- */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+.modal {
+  background: #1a1a1a;
+  padding: 3rem;
+  border-radius: 20px;
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+  border: 1px solid #333;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+.successIcon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.successAmount {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 1rem 0;
+  color: #4cd964;
+}
+
+.closeBtn {
+  background: #fff;
+  color: #000;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+/* Animations & Responsive */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+:global(.fade-in) {
+  animation: fadeIn 0.4s ease forwards;
+}
+
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  
+  .summaryPanel {
+    order: -1;
+    position: static;
+  }
+  
+  .amountInput {
+    font-size: 2.5rem;
+  }
+  
+  .qrFrame {
+    width: 180px;
+    height: 180px;
+  }
+}

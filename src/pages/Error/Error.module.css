@@ -1,0 +1,252 @@
+.errorPage {
+  min-height: 100vh;
+  background: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+  padding: 4rem 3rem;
+  background: #111111;
+  border-radius: 20px;
+  border: 1px solid #333333;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* Error Icon */
+.errorIcon {
+  font-size: 6rem;
+  margin-bottom: 2rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Error Title */
+.errorTitle {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(90deg, #ffffff, #cccccc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.2;
+}
+
+/* Error Description */
+.errorDescription {
+  font-size: 1.2rem;
+  color: #cccccc;
+  line-height: 1.6;
+  margin: 0 auto 3rem;
+  max-width: 500px;
+}
+
+/* Action Buttons */
+.actionButtons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.errorButton {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.2rem 2.5rem;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  min-width: 180px;
+  justify-content: center;
+}
+
+.backButton {
+  background: #ffffff;
+  color: #000000;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+}
+
+.backButton:hover {
+  background: #f0f0f0;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+}
+
+.homeButton {
+  background: #ffffff;
+  color: #000000;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+}
+
+.homeButton:hover {
+  background: #f0f0f0;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+}
+
+.buttonIcon {
+  font-size: 1.3rem;
+}
+
+.backButton .buttonIcon {
+  filter: brightness(0);
+}
+
+.homeButton .buttonIcon {
+  filter: brightness(0);
+}
+
+.buttonText {
+  font-weight: 700;
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+  .container {
+    padding: 3.5rem 2.5rem;
+    max-width: 550px;
+  }
+  
+  .errorIcon {
+    font-size: 5.5rem;
+  }
+  
+  .errorTitle {
+    font-size: 2.2rem;
+  }
+  
+  .errorDescription {
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .errorButton {
+    padding: 1.1rem 2.2rem;
+    min-width: 170px;
+  }
+}
+
+@media (max-width: 768px) {
+  .errorPage {
+    padding: 1.5rem;
+  }
+  
+  .container {
+    padding: 3rem 2rem;
+    max-width: 500px;
+  }
+  
+  .errorIcon {
+    font-size: 5rem;
+    margin-bottom: 1.75rem;
+  }
+  
+  .errorTitle {
+    font-size: 2rem;
+    margin-bottom: 1.25rem;
+  }
+  
+  .errorDescription {
+    font-size: 1.05rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .actionButtons {
+    gap: 1.25rem;
+  }
+  
+  .errorButton {
+    padding: 1.1rem 2rem;
+    min-width: 160px;
+    font-size: 1.05rem;
+  }
+}
+
+@media (max-width: 425.6px) {
+  .errorPage {
+    padding: 1rem;
+  }
+  
+  .container {
+    padding: 2.5rem 1.5rem;
+    border-radius: 15px;
+  }
+  
+  .errorIcon {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .errorTitle {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  .errorDescription {
+    font-size: 1rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .actionButtons {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .errorButton {
+    width: 100%;
+    max-width: 280px;
+    padding: 1rem 1.5rem;
+  }
+}
+
+@media (max-width: 375.2px) {
+  .container {
+    padding: 2rem 1.25rem;
+  }
+  
+  .errorIcon {
+    font-size: 3.5rem;
+    margin-bottom: 1.25rem;
+  }
+  
+  .errorTitle {
+    font-size: 1.6rem;
+  }
+  
+  .errorDescription {
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+  }
+  
+  .errorButton {
+    padding: 0.875rem 1.25rem;
+    font-size: 1rem;
+    min-width: 140px;
+  }
+  
+  .buttonIcon {
+    font-size: 1.2rem;
+  }
+}
