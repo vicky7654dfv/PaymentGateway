@@ -1,0 +1,257 @@
+/* Section Container */
+.teamSection {
+  background-color: #050505;
+  padding: 80px 0;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Header Content */
+.headerContent {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.subTitle {
+  color: #0066ff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.gradientText {
+  background: linear-gradient(90deg, #1a5cff, #7b42f6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.description {
+  color: #999999;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Grid Layout */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  width: 100%;
+}
+
+/* Member Card */
+.card {
+  background: linear-gradient(145deg, #111111, #0a0a0a);
+  border: 1px solid #222222;
+  border-radius: 24px; /* Increased radius to match large image */
+  padding: 15px; /* Reduced padding so image can be larger */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  border-color: #333333;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Image Wrapper */
+.imageWrapper {
+  /* Responsive width up to 500px as requested */
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 1 / 1; /* Keeps it square (500x500 ratio) */
+  position: relative;
+  margin-bottom: 20px;
+  border-radius: 20px; /* Rounded Square instead of Circle */
+  overflow: hidden;
+  border: 1px solid #333333;
+  transition: all 0.3s ease;
+}
+
+.card:hover .imageWrapper {
+  border-color: #7b42f6;
+  box-shadow: 0 0 20px rgba(123, 66, 246, 0.2);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  /* NORMAL STATE: Color */
+  filter: grayscale(0%);
+  transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+/* HOVER STATE: Black & White */
+.card:hover .image {
+  filter: grayscale(100%);
+  transform: scale(1.03); /* Subtle zoom */
+}
+
+/* Social Overlay - Bottom Corner Position */
+.socialOverlay {
+  position: absolute;
+  bottom: 0;
+  right: 0; /* Moves button to right corner */
+  padding: 15px; /* Spacing from the edge */
+  z-index: 10;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  /* Ensure it doesn't block the whole image */
+  pointer-events: none; 
+}
+
+/* LinkedIn Button */
+.socialLink {
+  pointer-events: auto; /* Re-enable clicks on the button */
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 8px 14px;
+  background: #0077b5;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  
+  /* Initial state: Visible */
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.socialLink:hover {
+  background: #005e93;
+  transform: scale(1.05);
+}
+
+/* Text Styling */
+.cardContent {
+  width: 100%;
+  padding: 0 10px 10px;
+}
+
+.name {
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0 0 5px 0;
+}
+
+.role {
+  color: #7b42f6;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.bio {
+  color: #888888;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* --- Media Queries --- */
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+  
+  .grid {
+    gap: 20px;
+  }
+
+  .title {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .teamSection {
+    padding: 60px 0;
+  }
+
+  /* 2 Columns on Tablet */
+  .grid {
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 25px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+  
+  /* On mobile, keep hover effect behavior or force B&W if preferred. 
+     Currently keeping desktop logic (Color -> B&W on tap/hover) */
+}
+
+@media (max-width: 425.6px) {
+  .container {
+    padding: 0 1.25rem;
+  }
+
+  /* 1 Column on Mobile */
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 375.2px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .name {
+    font-size: 1.2rem;
+  }
+}

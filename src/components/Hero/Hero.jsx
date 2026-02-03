@@ -50,18 +50,18 @@ const Hero = () => {
           {/* Stats */}
           <div className={styles.stats}>
             <div className={styles.statItem}>
-              <div className={styles.statNumber} data-count="500">0</div>
-              <div className={styles.statLabel}>273M+ Users</div>
+              <div className={styles.statNumber} data-count="500">273M+</div>
+              <div className={styles.statLabel}>Users</div>
             </div>
             <div className={styles.statDivider}></div>
             <div className={styles.statItem}>
-              <div className={styles.statNumber} data-count="99.9">0</div>
-              <div className={styles.statLabel}>97% Uptime</div>
+              <div className={styles.statNumber} data-count="99.9">97%</div>
+              <div className={styles.statLabel}>Uptime</div>
             </div>
             <div className={styles.statDivider}></div>
             <div className={styles.statItem}>
-              <div className={styles.statNumber} data-count="50">0</div>
-              <div className={styles.statLabel}>125+ Banks</div>
+              <div className={styles.statNumber} data-count="50">125+</div>
+              <div className={styles.statLabel}>Banks</div>
             </div>
           </div>
 

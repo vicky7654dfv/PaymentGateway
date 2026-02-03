@@ -122,7 +122,31 @@
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-/* Login Button */
+/* Sign Up Button (Outline Style) */
+.signupButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid #444444;
+  padding: 0.8rem 1.8rem;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.signupButton:hover {
+  border-color: #7b42f6;
+  background: rgba(123, 66, 246, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(123, 66, 246, 0.15);
+}
+
+/* Login Button (Gradient Style) */
 .loginButton {
   display: flex;
   align-items: center;
@@ -180,7 +204,7 @@
   transform-origin: left;
 }
 
-/* Menu Button Animation (Hamburger to X) */
+/* Menu Button Animation */
 .menuButton.open .menuBar:nth-child(1) {
   transform: rotate(45deg);
 }
@@ -211,7 +235,8 @@
     padding: 0.65rem 1rem;
   }
 
-  .loginButton {
+  .loginButton,
+  .signupButton {
     padding: 0.7rem 1.5rem;
   }
 }
@@ -241,7 +266,7 @@
   /* Stack items vertically and Center them */
   .navActive .navList {
     flex-direction: column;
-    align-items: center; /* Center items horizontally in the column */
+    align-items: center; 
     width: 100%;
     background: transparent;
     border: none;
@@ -251,18 +276,20 @@
 
   .navActive .navItem {
     width: 100%;
-    display: flex;         /* Ensure the LI is a flex container */
-    justify-content: center; /* Center the content inside the LI */
+    display: flex;
+    justify-content: center;
   }
 
   .navActive .navLink {
     width: 100%;
-    justify-content: center; /* Center text/icon inside the link */
+    justify-content: center;
   }
 
-  .navActive .loginButton {
+  /* Ensure both buttons take full width in mobile menu */
+  .navActive .loginButton,
+  .navActive .signupButton {
     width: 100%;
-    justify-content: center; /* Center content inside button */
+    justify-content: center;
   }
 
   /* Show the hamburger button */

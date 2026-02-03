@@ -4,6 +4,7 @@ import Hero from '../../components/Hero/Hero'
 import PaymentGateway from '../../components/PaymentGateway/PaymentGateway'
 import PaymentMethods from '../../components/PaymentMethods/PaymentMethods'
 import Footer from '../../components/Footer/Footer'
+import TeamSection from '../../components/TeamSection/TeamSection'
 
 export default function HomePage1() {
   return (
@@ -11,6 +12,7 @@ export default function HomePage1() {
         <Header />
         <Hero />
         <PaymentGateway />
+        <TeamSection />
         <PaymentMethods />
         <Footer />
     </div>
